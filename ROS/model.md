@@ -24,3 +24,12 @@ https://blog.csdn.net/buaazyp/article/details/84815812
   表示，tricycle_body的父环节是base_link，使用的碰撞网格文件是package://gazebo_plugins/test/tricycle_drive/meshes/tricycle
   <xacro:tricycle_body parent="base_link" meshes="package://gazebo_plugins/test/tricycle_drive/meshes/tricycle"/>
 </robot>
+
+
+3. arbotix 仿真的作用是将 cmd_vel 的命令,转换成控制机器人的命令, 如joint该怎么动, 看仿真后会发出 joint_state 以及 tf, odom坐标等信息.
+这些信息都可以被rviz subscribed 后显示出来.
+下面的node 是arbotix, yaml是设置的参数吗?需要研究一下
+<node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen" clear_params="true">
+      <rosparam file="$(find rbx1_bringup)/config/fake_turtlebot_arbotix.yaml" command="load" />
+      <param name="sim" value="true"/>
+  </node>
