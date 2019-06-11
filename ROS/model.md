@@ -38,6 +38,7 @@ arbotix 仿真的作用是将 cmd_vel 的命令,转换成控制机器人的命�
  **gmapping** for creating a map from laser scan data (or simulated laser data from a depth camera)
  **amcl** for localization using an existing map
  ## 1) [move_base](http://wiki.ros.org/move_base)
+![move_base](https://github.com/zyqiang0713/NoteAll/blob/master/ROS/png/navigation_overview.png)
  
  
  
