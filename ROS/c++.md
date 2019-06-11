@@ -1,16 +1,16 @@
 总结:https://www.nowcoder.com/discuss/124724?type=0&order=0&pos=20&page=0
 
-#1.c++ 11 新特性
-##(1) 
+# 1.c++ 11 新特性
+## (1) 
     nullptr 的引入, 区分空指针和 0.
-##(2) 
+## (2) 
     统一初始化语法
       struct A {
           int a;
           float b;
       };
       A a {1, 1.1};    // 统一的初始化语法
-##(3)
+## (3)
     C++11 引入了委托构造的概念
         class Base {
     public:
@@ -29,7 +29,7 @@
       using A::A;
       ........
      
-##(4)
+## (4)
   新增容器
   std::array : 保存在栈内
   无序容器: 无序容器中的元素是不进行排序的，内部通过 Hash 表实现，插入和搜索元素的平均复杂度为 O(constant)。std::unordered_map/std::unordered_multimap 和 std::unordered_set/std::unordered_multiset。
@@ -45,12 +45,12 @@ std::condition_variable
 代码编译需要使用 -pthread 选项
 
 
-##(6) 右值引用和move语义
+## (6) 右值引用和move语义
     转移左值
     需要理解理解!!
 
 
-#2. 
+# 2 . 
     static和const关键字的作用？
 
     static关键字的作用：
@@ -79,7 +79,7 @@ std::condition_variable
 
 
 
-#3. c++中的类或其他形式在内存中的分配情况
+# 3. c++中的类或其他形式在内存中的分配情况
 
 
 
