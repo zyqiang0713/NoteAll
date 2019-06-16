@@ -40,3 +40,9 @@ slam_mapping可以设置很多的参数,具体看ros wiki.
 在ros wiki中可以找到[网页](http://wiki.ros.org/actionlib)
 
 </details>
+
+
+<b><details><summary> costmap_2d  </summary></b>
+在ros wiki中可以找到[网页](http://wiki.ros.org/costmap_2d#Parameters)
+
+</details>
