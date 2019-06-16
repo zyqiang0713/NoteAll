@@ -37,7 +37,10 @@ slam_mapping可以设置很多的参数,具体看ros wiki.
 </details>
 
 <b><details><summary> actionlib  </summary></b>
+  
 在ros wiki中可以找到[网页](http://wiki.ros.org/actionlib)
+
+作为例子:在ros/indigo/include/actionlib_tutorials/FibonacciFeedback.h中, 看以下action具体生成的容器写法及用法.
 
 </details>
 
