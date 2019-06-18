@@ -82,7 +82,10 @@ std::condition_variable
 # 3. c++中的类或其他形式在内存中的分配情况
 
 
+# STL
+各类容器的详细信息可以看[这里](https://zh.cppreference.com/w/cpp/container).
 
+1. allocator, 标准库中包含的类, 允许我们创建是分配内存和初始化分离.
 
 
 
