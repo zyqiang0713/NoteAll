@@ -45,7 +45,17 @@ slam_mapping可以设置很多的参数,具体看ros wiki.
 </details>
 
 
+
 <b><details><summary> costmap_2d  </summary></b>
 在ros wiki中可以找到[网页](http://wiki.ros.org/costmap_2d#Parameters)
 
+</details>
+
+<b><details><summary> 欧拉角 四元数 的表示方法 </summary></b>
+可以参考[这个](https://www.matongxue.com/madocs/442.html)
+  
+要表示Quaternion 的方法（w, x, y, z）
+
+欧拉旋转会发生[万向节锁](https://blog.csdn.net/AndrewFan/article/details/60981437#)
+  
 </details>
