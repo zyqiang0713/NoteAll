@@ -55,3 +55,9 @@ Floyd算法只能在不存在负权环的情况下使用，因为其并不能判
 ***A* 算法***
 1. 
 参考内容[1](https://blog.csdn.net/hitwhylz/article/details/23089415)    [2]()
+
+看一下这篇[论文](https://blog.csdn.net/coutamg/article/details/53923717)
+
+[简单解释](https://www.cnblogs.com/21207-iHome/p/6048969.html)
+
+A* 在Dijkstra算法的基础上, 加入当前点距离 起点和终点的和的最短距离,而不是之前只看到起点的距离. 这里到终点的距离简化使用了曼哈顿距离 测算.
