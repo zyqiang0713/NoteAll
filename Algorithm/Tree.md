@@ -1,7 +1,10 @@
 ## 二叉树的遍历
 1.前序遍历: 先访问根节点,然后左节点,最后右节点
+
 2.中序遍历: 先访问左节点,然后根节点,最后右节点
+
 3.后序遍历: 先访问左节点,然后右节点,最后根节点
+
 
 ## 解决方法
 ### 1.自顶向下 伪代码
@@ -35,9 +38,36 @@
 
 ### 习题
 1.对称二叉树
+
 2.路径总和
+
 3.中序遍历和后序遍历构造二叉树
+
 4.填充每个节点的下一个右侧节点指针
+
+5.使用迭代而不使用递归中序遍历二叉树
+```
+ vector<int> inorderTraversal(TreeNode *root) {
+     vector<int> res;
+     if(!root)
+         return res;
+     stack<TreeNode*> st;
+     TreeNode* p = root;
+     while(p || !st.empty()){
+         if(p){
+             st.push(p);
+             p = p->left;
+         }
+         else{
+             p = st.top();
+             res.push_back(p->val);
+             st.pop();
+             p = p->right;
+         }
+     }
+     return res;
+ }
+```
 
 
 ## 二叉搜索树
