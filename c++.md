@@ -12,6 +12,22 @@
 
 </details>
 
+<b><details><summary>C++ 概念</summary></b>
+
+## 1. c++ template
+
+template的[定义讲解](https://blog.csdn.net/lezardfu/article/details/56852043)
+
+## 2. 友元
+
+友元提供了一种 普通函数或者类成员函数 访问另一个类中的私有或保护成员 的机制
+
+## 3.贪心算法  动态规划
+
+贪心和动态规划 两个算法 的[概念与区别](https://www.zhihu.com/question/32096465)
+
+</details>
+
 <b><details><summary>💡 STL</summary></b>
 ## 1. STL中的map详解
 
@@ -27,8 +43,17 @@ std::unordered_set 是基于hash表的，因此并不是顺序存储。
 
 std::map 就是以key来查找value而设计，**根据key排序**。
 
-std::set 是基于hash表的，因此并不是顺序存储
+std::set 是基于红黑树的内部需要进行排序，自动调整红黑树保持平衡，set用于快速查找，不可修改键值。
 
+**map和set都是以节点的形式保存，插入和删除速度快，不需要内存移动和copy。**
+
+***unorder_map 插入数据的方式***
+```
+	// 插入数据的三种方式
+	dict.insert(pair<string,int>("apple",2));
+	dict.insert(unordered_map<string, int>::value_type("orange",3));
+	dict["banana"] = 6;
+```
 ## 2. set用法， unordered_set
 ***set：基于红黑树，自动排序功能， 内部是有序的。***
 
