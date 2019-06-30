@@ -1,5 +1,14 @@
+<b><details><summary> 基本操作 </summary></b>
 
-## 1.Navigitation, Path Planing and SLAM
+### ros中的基本操作和module
+
+roscore 启动ros的核心进程, ros后序启动的各个进程,topic等需要在这里注册.
+  
+</details>
+
+
+<b><details><summary> 第八章 </summary></b>
+### 1.Navigitation, Path Planing and SLAM
 1. 有以下四个配置文件,需要看一下配置的内容.
 • base_local_planner_params.yaml
 • costmap_common_params.yaml
@@ -17,14 +26,14 @@ rosrun rviz rviz -d `rospack find rbx1_nav`/nav.rviz
 0 }, orientation: { x: 0, y: 0, z: 0, w: 1 } } }'**
 发布到topic  /move_base_simple/goal.
 
-### avoid obstocles
+#### avoid obstocles
 
 roslaunch rbx1_nav fake_move_base_map_with_obstacles.launch
 rosrun rviz rviz -d `rospack find rbx1_nav`/nav_obstacles.rviz
 
 多了nav_obstacles_params.yaml,看看obstocal怎么造出来的.
 
-## 2. map building with gmapping package
+### 2. map building with gmapping package
 slam_gmapping用来combine laser数据和odometry成一个map.
 是有道理的,靠laser来扫描障碍和距离, odometry可以估算出机器人走的路线,角度距离等,可以构建出一个map.
 The ROS gmapping package contains the slam_gmapping node that does the work of combining the data from laser scans and odometry into an occupancy map
@@ -42,10 +51,21 @@ rosbag record -O my_scan_data /scan /tf
 rosrun map_server map_saver -f my_map
 可以输出 **my_map.pgm**
 
-## 3. Navigation and Localization using a Map and amcl
+### 3. Navigation and Localization using a Map and amcl
 ROS uses the [amcl](http://wiki.ros.org/amcl) package to localize the robot within an existing map using the
 current scan data coming from the robot's laser or depth camera.
 
+```
+$ roslaunch rbx1_bringup fake_turtlebot.launch
+$ roslaunch rbx1_nav fake_amcl.launch map:=test_map.yaml
+rosrun rviz rviz -d `rospack find rbx1_nav`/amcl.rviz
+```
+运行后如图 ![所示](https://github.com/zyqiang0713/NoteAll/blob/master/ROS/png/acml.png)
+
+需要看一下地图 test_map.yaml
+
+
+</details>
 
 
 
