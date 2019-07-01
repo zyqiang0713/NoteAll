@@ -8,8 +8,21 @@ roscore 启动ros的核心进程, ros后序启动的各个进程,topic等需要�
 
 
 <b><details><summary> 第八章 </summary></b>
-### 1.Navigitation, Path Planing and SLAM
-1. 有以下四个配置文件,需要看一下配置的内容.
+  
+### 1. 几个要用到的module
+In this chapter, we will cover the three essential ROS packages that make up the core of
+the Navigation Stack:
+
+[move_base](http://wiki.ros.org/move_base) for moving the robot to a goal pose within a given reference frame
+
+[gmapping](http://wiki.ros.org/gmapping) for creating a map from laser scan data (or simulated laser data from a depth camera)
+
+[amcl](http://wiki.ros.org/amcl) for **localization using an existing map**
+
+
+### 2.Navigitation, Path Planing and SLAM
+1. move_base有以下四个配置文件,配置后才能正常使用move_base。
+看一下配置的内容.
 • base_local_planner_params.yaml
 • costmap_common_params.yaml
 • global_costmap_params.yaml
@@ -33,7 +46,7 @@ rosrun rviz rviz -d `rospack find rbx1_nav`/nav_obstacles.rviz
 
 多了nav_obstacles_params.yaml,看看obstocal怎么造出来的.
 
-### 2. map building with gmapping package
+### 3. map building with gmapping package
 slam_gmapping用来combine laser数据和odometry成一个map.
 是有道理的,靠laser来扫描障碍和距离, odometry可以估算出机器人走的路线,角度距离等,可以构建出一个map.
 The ROS gmapping package contains the slam_gmapping node that does the work of combining the data from laser scans and odometry into an occupancy map
@@ -51,7 +64,7 @@ rosbag record -O my_scan_data /scan /tf
 rosrun map_server map_saver -f my_map
 可以输出 **my_map.pgm**
 
-### 3. Navigation and Localization using a Map and amcl
+### 4. Navigation and Localization using a Map and amcl
 ROS uses the [amcl](http://wiki.ros.org/amcl) package to localize the robot within an existing map using the
 current scan data coming from the robot's laser or depth camera.
 
@@ -68,4 +81,33 @@ rosrun rviz rviz -d `rospack find rbx1_nav`/amcl.rviz
 </details>
 
 
+
+<b><details><summary> 第十章 Robot Vision </summary></b>
+
+The three pillars of computer vision in the ROS community are **[OpenCV](https://opencv.org/), OpenNI2 + OpenKinect, and PCL**. 
+
+The default camera launch files distributed with ROS use a 640x480 resolution. If you
+need lower or higher resolution, you can use rqt_reconfigure or the camera's launch
+file to change resolution modes as we will illustrate below.
+
+### 10.4. Installing OpenCV on Ubuntu Linux
+
+```
+$ sudo apt-get install ros-indigo-vision-opencv libopencv-dev \
+python-opencv
+$ rospack profile
+```
+
+to check installation
+```
+$ python
+>>> from cv2 import cv
+>>> quit()
+```
+
+### 10.5 ROS的[cv_bridge](http://wiki.ros.org/cv_bridge)
+
+用cv_bridge来转换OPENCV和ROS之间的图片格式。
+
+</details>
 
