@@ -183,6 +183,8 @@ close(connfd);
 
 Linux内存管理[原理](https://yq.aliyun.com/articles/369236?spm=a2c4e.11153940.0.0.4f6f7d96Qrdoe2)
 
+![内存](https://github.com/zyqiang0713/NoteAll/blob/master/Linux/png/MM.png)
+
 内存 进程 [管理](https://blog.csdn.net/shallnet/article/details/47701225)
 
 内存[虚拟地址](https://blog.csdn.net/m0_37760347/article/details/81155553)
