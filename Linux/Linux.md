@@ -6,11 +6,23 @@
 
 <b><details><summary> Shell </summary></b>
 
+## shell 编程
+1. wc -l  : 统计文件的行数
+  
+2. awk  -Fxx  -n xx  '{print $1}'
+  
+3. sed  ' 22a  '"'this is a book '''   '   : sed中用单引号包裹双引号可以表示单引号输出
+  
+	Output: ‘this is a book ’
+  
+  awk  '{if(NF>2) {print  $3$1"@@"$2;} else {print $0;}}'   a.txt  : awk后列数大于2的进行前面， else 后面语句
+
+
 </details>
 
 <b><details><summary> Linux 编程 </summary></b>
   
-## linux 进程间通信
+## 1. linux 进程间通信
 ### 1.1 linux pipe的[详解](https://blog.csdn.net/bit_clearoff/article/details/55105816)
 
 ```
@@ -175,7 +187,7 @@ close(connfd);
 }
 ```
 
-## linux 的内存分配
+## 2. linux 的内存分配
 
 ### 1. 内存管理
 
@@ -197,6 +209,12 @@ linux[内存管理](https://blog.csdn.net/hustyangju/article/details/46330259)
 
 在32位系统中，地址空间是4G，其中内核规定3~4G的范围是内核空间，0~3G是用户空间（每个用户进程都有这么大的虚拟空间）（图：中下）。前面提到过内核的地址映射是写死的，就是指这3~4G的对应的页表是写死的，它映射到了物理地址的0~1G上。（实际上没有映射1G，只映射了896M。剩下的空间留下来映射大于1G的物理地址，而这一部分显然不是写死的）。所以，大于896M的物理地址是没有写死的页表来对应的，内核不能直接访问它们（必须要建立映射），称它们为高端内存（当然，如果机器内存不足896M，就不存在高端内存。如果是64位机器，也不存在高端内存，因为地址空间很大很大，属于内核的空间也不止1G了）；
 
+## 3. linux 调试工具
 
+gdb： 可以先看看gdb[介绍](https://blog.csdn.net/gatieme/article/details/51671430).
+
+strace ： 用来跟踪程序执行时的系统调用和所接收的信号。 还可以统计程序执行时的关于系统调用和接收的各种信息。
+
+学习下strace[教程](https://www.linuxidc.com/Linux/2015-10/124338.htm)
 
 </details>
