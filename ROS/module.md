@@ -59,3 +59,12 @@ slam_mapping可以设置很多的参数,具体看ros wiki.
 欧拉旋转会发生[万向节锁](https://blog.csdn.net/AndrewFan/article/details/60981437#)
   
 </details>
+
+<b><details><summary> SLAM </summary></b>
+  
+可以参考[这个](http://www.slamcn.org/index.php/%E9%A6%96%E9%A1%B5)
+  
+
+ 
+</details>
+
